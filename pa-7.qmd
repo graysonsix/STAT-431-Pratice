@@ -1,0 +1,101 @@
+---
+title: "Practice Activity Week 7"
+format: html
+embed-resources: true
+editor: source
+---
+
+This week we're going to explore an interactive dashboard made by a previous
+STAT 541 student! Nicholas Soares works for the Morro Bay National Estuary 
+Program, and created this "State of the Bay" dashboard: 
+
+<https://mbnep-state-of-the-bay.shinyapps.io/data_dashboard/>
+
+You should also have the source file which was used to create the dashboard: 
+`morro-bay-estuary-dash.qmd`. 
+
+We're going to explore how interactivity is used throughout the dashboard, so 
+we recommend you have **both** the source file and the public dashboard opened
+up! 
+
+## Overview
+
+1. In the word cloud card, where do the options for "Pick your favorite:" come
+from?
+
+cloud_select
+
+2. What function is used to update the word cloud based on the option input 
+by the user?
+
+cloudsubmit
+
+## Creek Health
+
+3. Where is the `creek_analyte` input object used? Specifically, how is this
+object used?
+
+creek_analyte is used in the map_pal function. This object is used in color palette selection. 
+
+4. What font family are the labels for the creek segments?
+
+Arial
+
+5. Where is information for the creek segment clicked on in the `leaflet` map
+stored? 
+
+seg_click
+
+## Bacteria
+
+6. What function was used to add a message about the transformations above 
+the buttons for "Select Transformation"?
+
+The message is an argument in the radioButtons function which is in the tool tip function. 
+
+7. What values do the radio buttons take on? 
+
+raw data = 1
+square-root = 2
+logarithmic = 3
+
+8. Are are the plotting data adjusted based on the radio button that is 
+selected?
+
+Yes, selecting the button transforms the y-axis of the graph. 
+
+## Phytoplankton 
+
+9. What function is used to allow the user to select the dates that should be
+visualized in the plot?
+
+daterangeinput function
+
+10. How are these dates stored? Specifically, are they stored individually? As 
+a vector of inputs? As a list?
+
+vector of inputs
+
+## Shore Birds
+
+11. Which two zones produce **two** composition plots (an individual plot and a
+combined plot) when clicked on? 
+
+Zones 6 and 7 
+
+12. What color palette is used for the filled barplot?
+
+Dark2 color palette
+
+## Bay Fish
+
+13. The `"Bay pipefish"` is in a different position depending on the habitat
+that was selected (i.e., it is third for `Shoreline`, second to last for 
+`Tidal Flat`, and third to last for `Open Channel`). How does the ordering of 
+the fish species change based on the habitat input?
+
+The ordering was hard coded in the levels statement for each habitat that is selected.
+
+14. What color palette is used for the filled barplot?
+
+paired
